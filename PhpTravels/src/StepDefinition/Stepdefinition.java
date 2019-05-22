@@ -16,7 +16,7 @@ import org.testng.Reporter;
 import cucumber.api.java.en.Given;
 
 public class Stepdefinition {
-	@Given("user has to login")
+	@Given("user has o login")
 	public void openbrowser() throws IOException{
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
 		WebDriver driver = new ChromeDriver();
