@@ -2,6 +2,8 @@ package StepDefinition;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.List;
+import java.util.Map;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -12,10 +14,11 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
-
+import io.cucumber.datatable.DataTable;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class Stepdefinition {
@@ -43,26 +46,61 @@ public class Stepdefinition {
 		
 		
 		
-		
-		
-		
 	}
 	@Given("user has to login to test")
 	//@After(order =2)
 	public void close1(){
 		
-		System.out.println("Aftr 2");
+		System.out.println("user has to login to test");
 	}
 	
 	@Given("user has to login")
 public void close2(){
 		
-		System.out.println("Aftr 3");
+		System.out.println("user has to login");
 	}	
 	
 	@When("i have {int} pens")
 public void close4(int i){
 		
-		System.out.println(i);
+		System.out.println("number of pens: "+i);
 	}
+	
+	
+	@Then("i have {int} pen(s) are black/blue")
+public void close5(int i){
+		
+		System.out.println("number of pens: "+i);
+		
+	}
+	
+	@Given("user has to login to tester")
+public void close6(){
+		
+		System.out.println("Background");
+		
+	}
+	
+	
+	@Then("i have \"(.*)\" and \"(.*)\"")
+public void Datadriven(String username, String password){
+		
+		System.out.println(username+" "+password);
+		
+	}
+	
+	@When("i have username and password")
+	public void Datatables(DataTable table){
+		
+		List<Map<String, String>> data = table.asMaps(String.class, String.class);
+		for(int i=0;i<data.size();i++){
+			
+			System.out.println(data.get(i).get("Fields"));
+			System.out.println(data.get(i).get("Values"));
+			
+		}
+			
+			
+		}
+	
 }
