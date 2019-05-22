@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite hostname="DESKTOP-FDB8P96" name="Appium.AppiumMobileopers" tests="1" failures="0" timestamp="21 May 2019 09:18:43 GMT" time="29.482" errors="0">
+  <testcase name="test" time="29.472" classname="Appium.AppiumMobileopers"/>
+</testsuite>
