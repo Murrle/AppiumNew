@@ -7,7 +7,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-	features = "src/Features",glue={"StepDefinition"},plugin={"html:D:\\"},monochrome=true,snippets= SnippetType.CAMELCASE)
+	features = "src/Features",glue={"StepDefinition"},plugin={"html:D:\\"},monochrome=true,snippets= SnippetType.CAMELCASE,tags={"@scenario1"})
 
 public class Runner {
 

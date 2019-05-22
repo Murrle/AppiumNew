@@ -13,13 +13,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
 
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
+import cucumber.api.java.en.When;
 
 public class Stepdefinition {
-	@Given("user has o login")
+	WebDriver driver;
+	
+	
 	public void openbrowser() throws IOException{
 		System.setProperty("webdriver.chrome.driver", "./Driver/chromedriver.exe");
-		WebDriver driver = new ChromeDriver();
+		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.get("https://www.phptravels.net/login");
 		//driver.manage().window().maximize();
@@ -35,12 +40,29 @@ public class Stepdefinition {
 		
 		Reporter.log("Passed");
 	}
-		driver.quit();
+		
 		
 		
 		
 		
 		
 	}
+	@Given("user has to login to test")
+	//@After(order =2)
+	public void close1(){
+		
+		System.out.println("Aftr 2");
+	}
 	
+	@Given("user has to login")
+public void close2(){
+		
+		System.out.println("Aftr 3");
+	}	
+	
+	@When("i have {int} pens")
+public void close4(int i){
+		
+		System.out.println(i);
+	}
 }
